@@ -29,12 +29,13 @@
 
             <h9>🎉 PHP is working perfectly!</h9>
         ";
-        echo"
-        <br><br>
-        <button onclick=\"location.href='lesson_1.php'\">Go to Lesson 1</button>
-        ";
     ?>
-    <?= "$webname" ?>
+
+    <br><br>
+
+    <!-- Navigation Bars -->
+
+    <?php include_once 'nav.php'; ?>
     
 </body>
 </html>

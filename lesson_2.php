@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo "$webname - 2" ?></title>
-    <link rel="shortcut icon" href="/" type="image/x-icon">
 </head>
 <body>
 
-    <h1>conditional statements</h1>
+<!-- Conditional statements & Logical operators  -->
+<h3>in lesson 2 of php we are going to learn about <u>conditional statements</u> which are used to run code using conditions.</h3>
+
+    <h5>conditional statements</h5>
     <ul>
         <li>if statement</li>
         <li>if ...else statement</li>
@@ -17,19 +19,22 @@
     </ul>
     <hr>
 
-    <h1>if statement</h1>
-    <pre><code>
-    &lt;?php
-        //conditional statements
-        $age = 20;
+    <!-- if statement -->
+    <h5>if statement</h5>
+    <pre>
+        <code>
+            &lt;?php
+                //conditional statements
+                $age = 20;
 
-        // if statement
-        if ($age >= 18) {
-            echo "You are an adult. and $age years old";
-        }
-    ?>
-    </code></pre>
-    <h2>output</h2>
+                // if statement
+                if ($age >= 18) {
+                    echo "You are an adult. and $age years old";
+                }
+            ?>
+        </code>
+    </pre>
+    <h5>output</h5>
 
     <?php
         //conditional statements
@@ -44,7 +49,8 @@
     
     <hr>
 
-    <h1>if ... else statement</h1>
+    <!-- if ...else statement -->
+    <h5>if ... else statement</h5>
     <pre>
         <code>
             &lt;?php
@@ -59,7 +65,8 @@
             ?>
         </code>
     </pre>
-    <h2>output</h2>
+
+    <h5>output</h5>
     <?php
         // if ...else statement
         $marks = 50;
@@ -72,7 +79,8 @@
     ?>
     <hr>
 
-    <h1>if ...elseif statement</h1>
+    <!-- if ...elseif statement -->
+    <h5>if ...elseif statement</h5>
     <pre>
         <code>
             &lt;?php
@@ -94,7 +102,8 @@
             ?>
         </code>
     </pre>
-    <h2>output</h2>
+
+    <h5>output</h5>
     <?php
         // if ...elseif statement
         $score = 97;
@@ -112,15 +121,35 @@
 
     <hr>
 
-    <h1>logic operators</h1>
+    <h4>logic operators</h4>
     <ul>
-        <li>and</li>
-        <li>or</li>
-        <li>not</li>
+        <li><mark>&</mark> and operator</li>
+        <li><mark>||</mark> or operator</li>
+        <li><mark>!</mark> not operator</li>
     </ul>
 
-    <p>1 and operator</p>
+    <!-- AND operator -->
+    <h5>and operator</h5>
+    <p>runs code only if both conditions are true</p>
+    <pre>
+        <code>
+            &lt;?php
 
+                // and operator
+                $user = "Ramakrishna";
+                $key = "799456123";
+
+                if( $user == "Ramakrishna" && $key == "789456123"){
+                    echo "welcome back $user";
+                }
+                else{
+                    echo "user name or password is inncorrect";
+                }
+            ?&gt;
+        </code>
+    </pre>
+
+    <h5>output</h5>
     <?php
         // and opereatore
         $user = "Ramakrishna";
@@ -134,7 +163,81 @@
         }
     ?>
 
-    <button onclick="window.location.href='lesson_1.php'">go back</button> 
+    <hr>
+    
+    <!-- OR operator -->
+    <h5>or operator</h5>
+    <p>runs code even if one condition is true</p>
+    <pre>
+        <code>
+            &lt;?php
+                $plan = "gold";
+
+                if($plan == "platinum" || $plan == "gold"){
+                    echo "you are subscribed to $plan plan";
+                }
+                else{
+                    echo "you are not subscribed to any plan";
+                }
+            ?&gt;
+        </code>
+    </pre>
+
+    <h5>output</h5>
+
+    <?php
+        $plan = "gold";
+
+        if($plan == "platinum" || $plan == "gold"){
+            echo "you are subscribed to $plan plan";
+        }
+        else{
+            echo "you have not subscribed to any plan";
+        }
+    ?>
+
+    <hr>
+
+    <!-- NOT operator -->
+    <h5>not operator</h5>
+    <p>negates a condition ( true becomes false & false becomes true)</p>
+
+    <pre>
+        <code>
+            &lt;?php
+
+                $loggined = true;
+
+                if (!$loggined){
+                    echo "kindly please login or sign up";
+                }
+                else{
+                    echo "hellow you are sucessfully loggined";
+                }
+            ?&gt;
+        </code>
+    </pre>
+
+    <h5>output</h5>
+
+    <?php
+    
+        $loggined = true;
+
+        if (!$loggined){
+            echo "kindly please login or sign up";
+        }
+        else{
+            echo "hello you are sucessfully logined";
+        }
+    ?>
+
+    <br><br>    
+    <!-- <button onclick="window.location.href='lesson_1.php'">go back</button>
+    <button onclick="window.location.href='lesson_3.php'">go to lesson 3</button>  -->
+
+    <!-- Navigation Bar -->
+    <?php include_once 'nav.php'; ?>
 
 
 </body>

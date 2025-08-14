@@ -22,12 +22,14 @@
         <pre>
             <code>
                 &lt;?php
+                    // variables
                     $name = "ramakrishna";
                     $number = 9876543210;
                     $points = 9.2;
                     $qualified = true;
                     $subjects = ["maths" "physics" "chemistry"];
 
+                    /// output of variables values
                     echo "
                     student name : $name &lt;br&gt;
                     mobile number : $number &lt;br&gt;
@@ -44,12 +46,14 @@
         <h5>output</h5>
 
         <?php
+                    // variables
                     $name = "ramakrishna";
                     $number = 9876543210;
                     $points = 9.2;
                     $qualified = true;
                     $subjects = ["maths", "physics", "chemistry",];
 
+                    // output of variables values
                     echo "
                     student name : $name <br>
                     mobile number : $number <br>
@@ -98,6 +102,7 @@
                         course fee : ₹$price &lt;br&gt;
 
                     ";
+                    echo "is it free :" . ($isFree ? "🆓 yes its free" : "nope ❗") . "&lt;br&gt;";
                     echo "🧠 topics you'll learn";
                     echo "&lt;ul&gt;";
                     foreach ($topics as $topic){
@@ -112,7 +117,7 @@
         <h5>output</h5>
 
         <?php
-           //string variable
+                    //string variable
                     $name = "ramakrishna";
                     $cources = "PHP + MYSQL";
                     //intiger variable
@@ -125,12 +130,14 @@
                     $topics = ["php basics", "forms", "crud with mysql", "sessions", "security", "mini projects",];
 
                     echo "
-                        👋welcome, $name <br>
-                        you're learning $cources for $duration weeks <br>
-                        course fee : ₹$price <br>
-
+                        👋welcome, $name <mark> | this is a string</mark> <br>
+                        you're learning $cources for $duration weeks <mark> | this is a intiger</mark> <br>
+                        course fee : ₹$price <mark> | this is a float</mark><br>
                     ";
-                    echo "🧠 topics you'll learn";
+
+                    echo "is it free : " . ($isFree ? "🆓 yes its free" : "nope ❗") . "<mark> | this is a boolean</mark> <br>";
+                    
+                    echo "🧠 topics you'll learn <mark> | this is array</mark> indexed type";
                     echo "<ul>";
                     foreach ($topics as $topic){
                         echo "<li>$topic</li>";
@@ -139,27 +146,119 @@
         ?>
         <br>
         <hr>
+        <h3>types of arrays</h3>
+        <p>we have 3 - types of arrays and each one have it's own special capible fetaures. the 3 - types of array's are...
+            <ol>
+                <li>indexed array <mark>$indexed = ["one" , "two" , "three" ...]</mark></li>
+                <li>associative array's <mark>$associative = ["name" => "rama" , "email" => "ram@xmail.com" ...]</mark></li>
+                <li>multi-dimensional array's <mark>$multi_dimensional = [ ["name" => "ram"] , ["name" => "tharun"]....]</mark></li>
+            </ol>
+        </p>
+        <h5>indexed array's</h5>
+        <pre>
+            <code>
+                &lt;?php 
+                    $indexed = ["one" , "two" , "three"];
+
+                    echo "&lt;ol&gt;";
+
+                    foreach ($indexed as $index){
+                        echo "&lt;li&gt;$indexli&lt;/li&gt;";
+                    }
+
+                    echo "&lt;/ol&gt'";
+                ?&gt;
+            </code>
+        </pre>
+
+        <h5>output</h5>
+        <?php
+            $indexed = ["one" , "two" , "three" , "four"];
+
+            echo "<ol>";
+
+            foreach ($indexed as $index){
+                echo "<li>$index</li>";
+            }
+
+            echo "</ol>";
+
+        ?>
+
+        <h5>associative array's</h5>
+        <p>An associative array stores values (like a dictionary in python or an object inwith JavaScript).</p>
+        
+        <pre>
+            <code>
+                &lt;?php
+                    $users = [
+                        "name" => "ramakrishna",
+                        "email" => "ramakrishna@example.com",
+                        "age" => 25,
+                        "isSubscribed" => true,
+                    ];
+
+                    echo "&lt;h3&gt;users prifile&lt;/h3&gt;"
+                    echo "name : " . $user["name"] . "&lt;br&gt;";
+                    echo "naemailme : " . $user["email"] . "&lt;br&gt;";
+                    echo "age : " . $user["age"] . "&lt;br&gt;";
+                    echo "subscribed ? : " . ($user["isSubscribed"] ? "yes" : "no") . "&lt;br&gt;";
+                    
+                ?&gt;
+            </code>
+        </pre>
+        <h5>output</h5>
         <?php
             $user = [
             "name" => "Ramakrishna",
             "email" => "ramakrishna@example.com",
             "age" => 25,
-            "isSubscribed" => true
+            "isSubscribed" => true,
             ];
 
             echo "<h3>User Profile</h3>";
-            echo "Name: <b>" . $user["name"] . "</b> <br>";
-            echo "Email: " . $user["email"] . "<br>";
-            echo "Age: " . $user["age"] . "<br>";
-            echo "Subscribed? " . ($user["isSubscribed"] ? "Yes" : "No") . "<br>";
+            echo "Name : " . $user["name"] . " <br>";
+            echo "Email : " . $user["email"] . "<br>";
+            echo "Age : " . $user["age"] . "<br>";
+            echo "Subscribed ? : " . ($user["isSubscribed"] ? "Yes" : "No") . "<br>";
             ?>
+            
+            <br>
 
-            <h1>multi dimensional array</h1>
+            <h5>multi dimensional array</h5>
+            <p>a multi-dimensional is an array of <mark>contaning multiple array's</mark>. it allows you to store <strong>complex, structured data</strong> like a table or nested list items.</p>
+            
+            <pre>
+                <code>
+                    &lt;?php
+                        $users = [
+                            ["name" => "ramakrishna", "email" => "ram@example.com", "age" => 25],
+                            ["name" => "tharun", "email" => "tharun@example.com", "age" => 24],
+                            ["name" => "deekshitha", "email" => "deekshi@example.com", "age" => 23],
+                        ];
+
+                        echo "&lt;h3&gt;all users&lt;/h3&gt;";
+                        echo "&lt;ol>"
+
+                        foreach ($users as $user){
+                            echo "&lt;li>";
+                            echo "name : " . $user["name"] . "&ltbr>";
+                            echo "email : " . $user["email"] . "&ltbr>";
+                            echo "age : " . $user["age"] . "&ltbr>";
+                            echo "&lt;/li>";
+                        }
+                        echo "&lt;/ol>"
+                    ?&gt;
+                </code>
+            </pre>
+
+            <h5>output</h5>
+            
             <?php
                 $users = [
                 ["name" => "Ramakrishna", "email" => "ram@example.com", "age" => 25],
-                ["name" => "Sita", "email" => "sita@example.com", "age" => 22],
-                ["name" => "Arjun", "email" => "arjun@example.com", "age" => 28]
+                ["name" => "tharun", "email" => "tharun@example.com", "age" => 24],
+                ["name" => "deekshitha", "email" => "deekshi@example.com", "age" => 23]
                 ];
 
                 echo "<h3>All Users</h3>";
@@ -167,14 +266,17 @@
 
                 foreach ($users as $user) {
                     echo "<li>";
-                    echo "Name: " . $user["name"] . "<br>";
-                    echo "Email: " . $user["email"] . "<br>";
-                    echo "Age: " . $user["age"] . "<br><br>";
+                    echo "Name : " . $user["name"] . "<br>";
+                    echo "Email : " . $user["email"] . "<br>";
+                    echo "Age : " . $user["age"] . "<br><br>";
                     echo "</li>";
                 }
                 echo "</ol>";
             ?>
-            <button onclick="window.location.href='./'">go back</button> <button onclick="window.location.href='lesson_2.php'">lesson 2</button>
+            <!-- <button onclick="window.location.href='./'">go back</button> <button onclick="window.location.href='lesson_2.php'">lesson 2</button> -->
+
+            <!-- Navigation Bar -->
+             <?php include_once 'nav.php'; ?>
 
 
     
